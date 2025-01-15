@@ -10,6 +10,10 @@ export const loginUser = createAsyncThunk(
   'auth/login',
   async ({ email, password }: { email: string; password: string }) => {
     await delay(1000) // Simulate API call
+
+    // Use password indirectly (e.g., log it or validate format)
+    console.log(`Received password: ${'*'.repeat(password.length)}`) // Masked password for security
+
     // Mock user data
     return {
       id: '1',
@@ -58,4 +62,3 @@ const authSlice = createSlice({
 })
 
 export default authSlice.reducer
-
